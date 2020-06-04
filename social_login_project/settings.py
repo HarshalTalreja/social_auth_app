@@ -25,7 +25,7 @@ SECRET_KEY = 'iy+gi+bw7&nssy6gfy2%z4_%m3gyy^4ff9)eyy72m*s%6k*yl6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['social-auth-app-harshal.herokuapp.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
