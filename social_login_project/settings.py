@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'iy+gi+bw7&nssy6gfy2%z4_%m3gyy^4ff9)eyy72m*s%6k*yl6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['social-auth-app-harshal.herokuapp.com', '127.0.0.1', 'localhost']
 
@@ -163,3 +164,5 @@ SOCIAL_AUTH_GITHUB_SECRET = 'ed89ba32370369cd12400f5cdbd712304a4585c0'
 
 SOCIAL_AUTH_TWITTER_KEY = 'AtokyYcs2wy90hhdwa41QzDWO'
 SOCIAL_AUTH_TWITTER_SECRET = 'wGoRBJffWPdpiDyXn6usAdOoUhJtUhVI4169eRG295NeW38i5G'
+
+django_heroku.settings(locals())
