@@ -1,0 +1,29 @@
+{% extends 'core/base.html' %}
+{% block title %} Search Users {% endblock %}
+{% block content %}
+  <div class="search-bar mt-sm-2 mr-2">
+    <form method="GET">
+      <input type="text" class="form-control" name="q" id="id_q" placeholder="Search User based on phone number or name...">
+    </form>
+    <br><br>
+  </div>
+  {% if users %}
+    {% for user in users %}
+        <p>{{user.name}} | {{user.phone}}</p>
+    {% endfor %}
+  {% else %}
+    <h4>No Results..</h4>
+    <p>There are no results matching your search: {{query}}</p>
+  {% endif %}
+
+
+
+
+
+
+<script type="text/javascript">
+  document.getElementById("id_q").value = "{{query}}"
+</script>
+
+
+{% endblock %}

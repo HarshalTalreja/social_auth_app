@@ -1,0 +1,15 @@
+{% extends 'core/base.html' %}
+{% load crispy_forms_tags %}
+{% block title %} Update Phone Number {% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-sm-12 mb-3">
+        <h4 class="text-center"> Welcome {{ user.username }} </h4>
+        <form method="post">
+          {% csrf_token %}
+          {{form|crispy}}
+          <button type="submit" class="btn btn-outline-info">Update</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'core/base.html' %}
+{% load crispy_forms_tags %}
+{% block title %} Sign in {% endblock %}
+{% block content %}
+<div class="row">
+  <div class="col-md-8 mx-auto social-container my-2 order-md-1">
+    <form method="post">
+      {% csrf_token %}
+      {{ form|crispy }}
+      <button type="submit" class="btn btn-outline-info">Login</button>
+    </form>
+    <hr>
+    <h4 align="center">or</h4>
+    <hr>
+      <button class="btn btn-danger  mb-2">
+          <a href="{% url 'social:begin' 'github' %}">Login with Github</a>
+      </button>
+      <button class="btn btn-primary mb-2">
+          <a href="{% url 'social:begin' 'twitter' %}">Login with Twitter
+          </a>
+      </button>
+      <button class="btn btn-info mb-2">
+          <a href="{% url 'social:begin' 'linkedin-oauth2' %}">Login with LinkedIn</a>
+      </button>
+  </div>
+</div>
+{% endblock %}

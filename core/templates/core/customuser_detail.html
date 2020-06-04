@@ -1,0 +1,11 @@
+{% extends 'core/base.html' %}
+{% block title %} User Details {% endblock %}
+{% block content %}
+  <div class="col-md-6 social-container my-2">
+    <p> Name:  {{ user.name }} </p>
+    <p> Phone Number: {{ user.phone }}</p>
+    <p> Email: {{ user.email }}</p>
+    <hr>
+    <a class="btn btn-outline-success" href="{% url 'user_list' %}">Go Back</a>
+  </div>
+{% endblock %}

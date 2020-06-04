@@ -1,0 +1,16 @@
+{% extends 'core/base.html' %}
+{% block title %} Home {% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-sm-12 mb-3">
+        <h4 class="text-center"> Welcome {{ user.name }} </h4>
+        <hr>
+        <a class="btn btn-outline-danger" href="{% url 'logout' %}">Logout</a>
+        {% if not user.has_usable_password %}
+          <hr>
+          <p>Please Set Password to login using mobile number from next time.</p>
+          <a class="btn btn-outlie-primary" href="{% url 'set_password' %}">Set Password</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
